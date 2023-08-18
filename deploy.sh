@@ -9,6 +9,14 @@ if ! docker info || systemctl status docker > /dev/null 2>&1 ; then
     exit 1
 fi
 
+# Name of the container you want to check
+CONTAINER_NAME="application"
+
+# Check if the container exists
+if ! docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$" ; then
+    docker compose up --build -d
+fi
+
 docker compose exec application php artisan down
 
 docker compose exec application php auth:clear-resets
