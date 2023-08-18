@@ -9,10 +9,6 @@ if ! docker info || systemctl status docker > /dev/null 2>&1 ; then
     exit 1
 fi
 
-# Name of the container you want to check
-CONTAINER_NAME="application"
-
-
 # List of container names to check and start if not running
 CONTAINERS=("application" "mysql" "redis-database" "adminer" "nginx-webserver" "supervisor")
 
@@ -31,6 +27,11 @@ start_container() {
     fi
 }
 
+restart_container() {
+    local container_name="$1"
+    docker restart "${container_name}"
+}
+ 
 # Start containers if not running and wait for them to be up
 for container in "${CONTAINERS[@]}"; do
     start_container "${container}"
@@ -58,6 +59,11 @@ docker compose exec application php storage:link
 docker compose exec application php optimize
 
 docker compose exec application php artisan up
+
+# restart all the conatiners
+for container in "${CONTAINERS[@]}"; do
+    restart_container "${container}"
+done
 
 # Define the blue color escape code
 BLUE="\033[34m"
