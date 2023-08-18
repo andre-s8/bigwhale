@@ -12,10 +12,38 @@ fi
 # Name of the container you want to check
 CONTAINER_NAME="application"
 
-# Check if the container exists
-if ! docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$" ; then
-    docker compose up --build -d
-fi
+
+# List of container names to check and start if not running
+CONTAINERS=("application" "mysql" "redis-database" "adminer" "nginx-webserver" "supervisor")
+
+# Function to check if a container is running
+is_container_running() {
+    local container_name="$1"
+    docker ps -q --filter "name=${container_name}" | grep -q .
+}
+
+# Function to start a container
+start_container() {
+    local container_name="$1"
+    if ! is_container_running "${container_name}" ; then
+        echo "Starting container '${container_name}'..."
+        docker start "${container_name}"
+    fi
+}
+
+# Start containers if not running and wait for them to be up
+for container in "${CONTAINERS[@]}"; do
+    start_container "${container}"
+done
+
+# Wait for containers to be up
+for container in "${CONTAINERS[@]}"; do
+    while ! is_container_running "${container}" ; do
+        echo "Waiting for container '${container}' to be up..."
+        sleep 1
+    done
+    echo "Container '${container}' is up."
+done
 
 docker compose exec application php artisan down
 
