@@ -1,0 +1,112 @@
+version: "3.8"
+
+networks:
+  bigwhale:
+
+services:
+  # application
+  application:
+    container_name: application
+    working_dir: /var/www/html
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9008:9000"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - bigwhale
+    env_file: .env
+    depends_on:
+      mysql:
+        condition: service_healthy
+      web:
+        condition: service_started
+
+  # database
+  mysql:
+    image: mariadb:10.6
+    container_name: mysql
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "33037:3306"
+    env_file: .env
+    networks:
+      - bigwhale
+
+  # redis
+  redis:
+    image: redis:6
+    container_name: redis-database
+    restart: unless-stopped
+    command: ["redis-server"]
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - bigwhale
+
+  # npm
+  npm:
+    image: node:20.5
+    container_name: npm
+    ports:
+    - "3000:3000"
+    entrypoint: ['npm']
+    networks:
+      - bigwhale
+    volumes:
+     - .:/var/www/html
+
+  # database admin
+  adminer:
+    container_name: adminer
+    image: adminer:4.8.1
+    restart: always
+    env_file:
+      - ./.env
+    environment:
+      ADMINER_DEFAULT_DB_DRIVER: mysql
+      ADMINER_DEFAULT_DB_HOST: mysql
+    networks:
+      - bigwhale
+    depends_on:
+      - mysql
+      - web
+    ports:
+      - 8082:8080
+  
+  # web/nginx
+  web:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    container_name: nginx-webserver
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8081:80
+    networks:
+      - bigwhale
+  
+  # supervisor
+  supervisor:
+    container_name: supervisor
+    build:
+      context: ./docker/supervisor
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - application
+    networks:
+      - bigwhale
+
+volumes:
+  db-data:
+  redis-data:
