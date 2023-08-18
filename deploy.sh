@@ -48,15 +48,15 @@ done
 
 docker compose exec application php artisan down
 
-docker compose exec application php auth:clear-resets
+docker compose exec application php artisan auth:clear-resets
 
-docker compose exec application php optimize:clear
+docker compose exec application php artisan optimize:clear
 
 docker compose exec application php artisan migrate --seed --force
 
-docker compose exec application php storage:link
+docker compose exec application php artisan storage:link
 
-docker compose exec application php optimize
+docker compose exec application php artisan optimize
 
 docker compose exec application php artisan up
 
