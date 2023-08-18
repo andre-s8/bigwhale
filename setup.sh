@@ -161,7 +161,7 @@ else
     echo "The .env file does not exist."
 fi
 
-docker compose up -p "$app_name" --build -d 
+docker compose up --build -d 
 
 # Define the message and URL
 message="Application is done and accessible at:"

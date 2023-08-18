@@ -679,3 +679,79 @@
 2023-08-18 12:48:30,503 INFO spawned: 'schedule-worker_00' with pid 8
 2023-08-18 12:48:31,825 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2023-08-18 12:48:31,827 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 12:51:22,133 WARN received SIGTERM indicating exit request
+2023-08-18 12:51:22,138 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 12:51:22,636 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 12:51:23,643 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 12:51:24,143 INFO Set uid to user 0 succeeded
+2023-08-18 12:51:24,145 INFO supervisord started with pid 1
+2023-08-18 12:51:25,154 INFO spawned: 'queue-worker_00' with pid 7
+2023-08-18 12:51:25,163 INFO spawned: 'schedule-worker_00' with pid 8
+2023-08-18 12:51:26,534 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 12:51:26,539 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:04:59,719 WARN received SIGTERM indicating exit request
+2023-08-18 13:04:59,722 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:04:59,744 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:05:00,758 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:07:47,156 INFO Set uid to user 0 succeeded
+2023-08-18 13:07:47,165 INFO supervisord started with pid 1
+2023-08-18 13:07:48,172 INFO spawned: 'queue-worker_00' with pid 6
+2023-08-18 13:07:48,176 INFO spawned: 'schedule-worker_00' with pid 7
+2023-08-18 13:07:49,917 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:07:49,919 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:07:53,148 INFO exited: queue-worker_00 (exit status 0; expected)
+2023-08-18 13:07:54,167 INFO spawned: 'queue-worker_00' with pid 14
+2023-08-18 13:07:55,180 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:09:21,541 WARN received SIGTERM indicating exit request
+2023-08-18 13:09:21,577 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:09:21,613 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:09:21,631 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:09:24,818 INFO Set uid to user 0 succeeded
+2023-08-18 13:09:24,821 INFO supervisord started with pid 1
+2023-08-18 13:09:25,832 INFO spawned: 'queue-worker_00' with pid 7
+2023-08-18 13:09:25,835 INFO spawned: 'schedule-worker_00' with pid 8
+2023-08-18 13:09:27,716 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:09:27,718 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:09:46,879 WARN received SIGTERM indicating exit request
+2023-08-18 13:09:46,914 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:09:46,967 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:09:46,987 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:10:34,891 INFO Set uid to user 0 succeeded
+2023-08-18 13:10:34,908 INFO supervisord started with pid 1
+2023-08-18 13:10:35,917 INFO spawned: 'queue-worker_00' with pid 7
+2023-08-18 13:10:35,920 INFO spawned: 'schedule-worker_00' with pid 8
+2023-08-18 13:10:36,924 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:10:36,927 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:10:41,568 INFO exited: queue-worker_00 (exit status 0; expected)
+2023-08-18 13:10:42,587 INFO spawned: 'queue-worker_00' with pid 15
+2023-08-18 13:10:44,515 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:13:49,731 WARN received SIGTERM indicating exit request
+2023-08-18 13:13:49,797 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:13:49,821 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:13:50,848 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:14:13,069 INFO Set uid to user 0 succeeded
+2023-08-18 13:14:13,087 INFO supervisord started with pid 1
+2023-08-18 13:14:14,103 INFO spawned: 'queue-worker_00' with pid 7
+2023-08-18 13:14:14,142 INFO spawned: 'schedule-worker_00' with pid 8
+2023-08-18 13:14:15,961 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:14:15,963 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:14:51,668 WARN received SIGTERM indicating exit request
+2023-08-18 13:14:51,688 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:14:51,707 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:14:51,716 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:15:31,023 INFO Set uid to user 0 succeeded
+2023-08-18 13:15:31,043 INFO supervisord started with pid 1
+2023-08-18 13:15:32,055 INFO spawned: 'queue-worker_00' with pid 7
+2023-08-18 13:15:32,060 INFO spawned: 'schedule-worker_00' with pid 8
+2023-08-18 13:15:33,076 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:15:33,083 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:16:31,869 WARN received SIGTERM indicating exit request
+2023-08-18 13:16:31,911 INFO waiting for queue-worker_00, schedule-worker_00 to die
+2023-08-18 13:16:31,942 WARN stopped: schedule-worker_00 (terminated by SIGTERM)
+2023-08-18 13:16:31,955 WARN stopped: queue-worker_00 (terminated by SIGTERM)
+2023-08-18 13:17:12,981 INFO Set uid to user 0 succeeded
+2023-08-18 13:17:13,060 INFO supervisord started with pid 1
+2023-08-18 13:17:14,074 INFO spawned: 'queue-worker_00' with pid 8
+2023-08-18 13:17:14,079 INFO spawned: 'schedule-worker_00' with pid 9
+2023-08-18 13:17:15,083 INFO success: queue-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-08-18 13:17:15,088 INFO success: schedule-worker_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

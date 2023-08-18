@@ -15,21 +15,5 @@ use Illuminate\Support\Facades\Cache;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'app')->name('index');
 
-Route::get('/job', function () {
-    dispatch(new ExampleJob());
-    return response()->json([
-        'message' => 'Job has been dispatched'
-    ]);
-});
-
-Route::get('/test-redis', function () {
-   $resultOfCache = Cache::store('redis')->set('my-redis-key', \Illuminate\Support\Str::random());
-    return response()->json([
-        'resultOfCache' => $resultOfCache,
-        'redis-stuff' => Cache::store('redis')->get('my-reds-key')
-    ]);
-});
