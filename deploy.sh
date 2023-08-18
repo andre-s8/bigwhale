@@ -30,6 +30,7 @@ start_container() {
 restart_container() {
     local container_name="$1"
     docker restart "${container_name}"
+    echo -e "Container ${container_name} has been restarted"
 }
  
 # Start containers if not running and wait for them to be up
